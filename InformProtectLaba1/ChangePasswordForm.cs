@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -35,10 +36,19 @@ namespace InformProtectLaba1
             }
             else
             {
-                _user.Password = this.newPassTextBox.Text;
-                UsersAccountService.Users.Where(x => x.Login == _user.Login).Select(x => x.Password = _user.Password);
-                MessageBox.Show("Пароль успешно изменен");
-                this.Hide();
+                Regex regex = new Regex(@"^(?=.*[\p{L}])(?=.*\d)(?=.*[-.;,]).{1,}$");
+                if (!_user.isPasswordConstraint||regex.IsMatch(this.newPassTextBox.Text))
+                {
+                    _user.Password = this.newPassTextBox.Text;
+                    UsersAccountService.Users.Where(x => x.Login == _user.Login).Select(x => x.Password = _user.Password);
+                    MessageBox.Show("Пароль успешно изменен");
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Пароль не подходит по требованиям\nПароль должен содержать буквы, цифры и знаки препинания.", "Ошибка");
+                }
+                
             }
             
         }
