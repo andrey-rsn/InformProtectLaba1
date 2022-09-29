@@ -48,5 +48,11 @@ namespace InformProtectLaba1
                 this.modifyUsersBtn.Visible=false;
             }
         }
+
+        private void modifyUsersBtn_Click(object sender, EventArgs e)
+        {
+            var userListForm = new UsersListForm();
+            userListForm.Show();
+        }
     }
 }

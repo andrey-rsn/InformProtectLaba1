@@ -82,6 +82,7 @@
             this.modifyUsersBtn.TabIndex = 2;
             this.modifyUsersBtn.Text = "Список пользователей";
             this.modifyUsersBtn.UseVisualStyleBackColor = true;
+            this.modifyUsersBtn.Click += new System.EventHandler(this.modifyUsersBtn_Click);
             // 
             // exitBtn
             // 
