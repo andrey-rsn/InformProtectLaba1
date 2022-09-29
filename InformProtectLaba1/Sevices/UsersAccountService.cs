@@ -3,12 +3,12 @@ using Newtonsoft.Json;
 
 namespace InformProtectLaba1.Sevices;
 
-public class UsersAccountService
+public static class UsersAccountService
 {
-    private readonly string _path;
-    public List<User> Users { get; set; }
+    private static readonly string _path;
+    public static List<User> Users { get; set; }
 
-    public UsersAccountService()
+    static UsersAccountService()
     {
         _path= Path.GetDirectoryName(Path.GetDirectoryName(
                 Path.GetDirectoryName(
@@ -16,7 +16,14 @@ public class UsersAccountService
                         AppDomain.CurrentDomain.SetupInformation.ApplicationBase))));
         ReadDataFromFile();
     }
-    private void ReadDataFromFile()
+
+    public static void SaveData()
+    {
+        var filePath = Path.Combine(_path, "Data", "accounts.json");
+        string json = JsonConvert.SerializeObject(Users);
+        File.WriteAllText(filePath, json);
+    }
+    private static void ReadDataFromFile()
     {
         var filePath= Path.Combine(_path, "Data", "accounts.json");
         if (!File.Exists(filePath))
@@ -30,7 +37,7 @@ public class UsersAccountService
         }
     }
 
-    private void CreateAndFullFile(string path)
+    private static void CreateAndFullFile(string path)
     {
         var data = new List<User>()
         {
@@ -40,7 +47,7 @@ public class UsersAccountService
                 isBlocked=false,
                 isPasswordConstraint=true,
                 Login="admin",
-                Password="admin123",
+                Password="",
                 Role="admin"
             }
         };

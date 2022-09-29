@@ -33,6 +33,7 @@
             this.changePasswordBtn = new System.Windows.Forms.Button();
             this.addUserBtn = new System.Windows.Forms.Button();
             this.modifyUsersBtn = new System.Windows.Forms.Button();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loginLabel
@@ -61,6 +62,7 @@
             this.changePasswordBtn.TabIndex = 2;
             this.changePasswordBtn.Text = "Сменить пароль";
             this.changePasswordBtn.UseVisualStyleBackColor = true;
+            this.changePasswordBtn.Click += new System.EventHandler(this.changePasswordBtn_Click);
             // 
             // addUserBtn
             // 
@@ -80,11 +82,23 @@
             this.modifyUsersBtn.Text = "Список пользователей";
             this.modifyUsersBtn.UseVisualStyleBackColor = true;
             // 
+            // exitBtn
+            // 
+            this.exitBtn.Location = new System.Drawing.Point(41, 169);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(196, 29);
+            this.exitBtn.TabIndex = 2;
+            this.exitBtn.Text = "Выход";
+            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
             // FunctionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 170);
+            this.ClientSize = new System.Drawing.Size(264, 213);
+            this.ControlBox = false;
+            this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.modifyUsersBtn);
             this.Controls.Add(this.addUserBtn);
             this.Controls.Add(this.changePasswordBtn);
@@ -104,5 +118,6 @@
         private Button changePasswordBtn;
         private Button addUserBtn;
         private Button modifyUsersBtn;
+        private Button exitBtn;
     }
 }

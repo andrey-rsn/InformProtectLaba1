@@ -22,5 +22,15 @@ namespace InformProtectLaba1
             this.roleLabel.Text = $"Роль {user.Role}";
         }
 
+        private void changePasswordBtn_Click(object sender, EventArgs e)
+        {
+            var changePassForm = new ChangePasswordForm(_user);
+            changePassForm.Show();
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
