@@ -20,6 +20,12 @@ namespace InformProtectLaba1
                     adminForm.Show();
                     this.Hide();
                 }
+                else if(user.Role == "user")
+                {
+                    var userForm = new FunctionsForm(user);
+                    userForm.Show();
+                    this.Hide();
+                }
             }
             else
             {

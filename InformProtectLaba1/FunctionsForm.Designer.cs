@@ -72,6 +72,7 @@
             this.addUserBtn.TabIndex = 2;
             this.addUserBtn.Text = "Добавить пользователя";
             this.addUserBtn.UseVisualStyleBackColor = true;
+            this.addUserBtn.Click += new System.EventHandler(this.addUserBtn_Click);
             // 
             // modifyUsersBtn
             // 
