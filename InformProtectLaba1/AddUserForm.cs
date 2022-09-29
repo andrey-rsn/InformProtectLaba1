@@ -49,5 +49,11 @@ namespace InformProtectLaba1
                 MessageBox.Show($"Пользователь с именем {this.loginTextBox.Text} уже существует, выберите другое", "Внимание");
             }
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var progInfoForm = new ProgramInfoForm();
+            progInfoForm.Show();
+        }
     }
 }

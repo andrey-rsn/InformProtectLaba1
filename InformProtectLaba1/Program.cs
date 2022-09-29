@@ -25,8 +25,10 @@ namespace InformProtectLaba1
 
         private static void SaveChanges()
         {
-            MessageBox.Show("Сохранение данных");
+            var dataSaveForm=new DataSaveForm();
+            dataSaveForm.Show();
             UsersAccountService.SaveData();
+            dataSaveForm.Close();
         }
 
     }

@@ -42,5 +42,11 @@ namespace InformProtectLaba1
             }
             
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var progInfoForm = new ProgramInfoForm();
+            progInfoForm.Show();
+        }
     }
 }

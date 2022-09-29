@@ -72,5 +72,16 @@ namespace InformProtectLaba1
                 MessageBox.Show("Изменения успешно сохранены");
             }
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var progInfoForm = new ProgramInfoForm();
+            progInfoForm.Show();
+        }
     }
 }
