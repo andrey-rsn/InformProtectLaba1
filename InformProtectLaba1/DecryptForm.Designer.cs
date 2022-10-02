@@ -1,6 +1,6 @@
 ﻿namespace InformProtectLaba1
 {
-    partial class AddUserForm
+    partial class DecryptForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,54 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.OKButton = new System.Windows.Forms.Button();
+            this.decryptBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.loginTextBox = new System.Windows.Forms.TextBox();
-            this.ExitButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // OKButton
+            // decryptBtn
             // 
-            this.OKButton.Location = new System.Drawing.Point(24, 81);
-            this.OKButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(107, 22);
-            this.OKButton.TabIndex = 0;
-            this.OKButton.Text = "OK";
-            this.OKButton.UseVisualStyleBackColor = true;
-            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
+            this.decryptBtn.Location = new System.Drawing.Point(12, 82);
+            this.decryptBtn.Name = "decryptBtn";
+            this.decryptBtn.Size = new System.Drawing.Size(111, 23);
+            this.decryptBtn.TabIndex = 0;
+            this.decryptBtn.Text = "Расшифровать";
+            this.decryptBtn.UseVisualStyleBackColor = true;
+            this.decryptBtn.Click += new System.EventHandler(this.decryptBtn_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 33);
+            this.label1.Location = new System.Drawing.Point(12, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 15);
+            this.label1.Size = new System.Drawing.Size(282, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Имя нового пользоватлеля";
+            this.label1.Text = "Пароль для расшифровки данных пользователей";
             // 
-            // loginTextBox
+            // textBox1
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(205, 31);
-            this.loginTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.loginTextBox.Name = "loginTextBox";
-            this.loginTextBox.Size = new System.Drawing.Size(110, 23);
-            this.loginTextBox.TabIndex = 2;
+            this.textBox1.Location = new System.Drawing.Point(12, 53);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(282, 23);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.UseSystemPasswordChar = true;
             // 
-            // ExitButton
+            // button1
             // 
-            this.ExitButton.Location = new System.Drawing.Point(207, 81);
-            this.ExitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(107, 22);
-            this.ExitButton.TabIndex = 0;
-            this.ExitButton.Text = "Отмена";
-            this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            this.button1.Location = new System.Drawing.Point(183, 82);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Отмена";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
@@ -83,7 +81,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(354, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(310, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -102,21 +100,19 @@
             this.toolStripMenuItem2.Text = "О программе";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
-            // AddUserForm
+            // DecryptForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 118);
-            this.ControlBox = false;
-            this.Controls.Add(this.loginTextBox);
+            this.ClientSize = new System.Drawing.Size(310, 115);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ExitButton);
-            this.Controls.Add(this.OKButton);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.decryptBtn);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "AddUserForm";
-            this.Text = "Добавление пользователя";
+            this.Name = "DecryptForm";
+            this.Text = "Расшифровка";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -126,10 +122,10 @@
 
         #endregion
 
-        private Button OKButton;
+        private Button decryptBtn;
         private Label label1;
-        private TextBox loginTextBox;
-        private Button ExitButton;
+        private TextBox textBox1;
+        private Button button1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem toolStripMenuItem2;

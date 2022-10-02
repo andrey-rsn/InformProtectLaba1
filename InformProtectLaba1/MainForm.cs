@@ -7,6 +7,7 @@ namespace InformProtectLaba1
         private int _tryCount=3;
         public MainForm()
         {
+            UsersAccountService.isEncrypted = true;
             InitializeComponent();
         }
 

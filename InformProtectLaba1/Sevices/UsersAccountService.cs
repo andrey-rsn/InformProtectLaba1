@@ -1,11 +1,15 @@
 ﻿using InformProtectLaba1.Data;
 using Newtonsoft.Json;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace InformProtectLaba1.Sevices;
 
 public static class UsersAccountService
 {
     private static readonly string _path;
+
+    public static bool isEncrypted=false;
     public static List<User> Users { get; set; }
 
     static UsersAccountService()
@@ -14,16 +18,20 @@ public static class UsersAccountService
                 Path.GetDirectoryName(
                     Path.GetDirectoryName(
                         AppDomain.CurrentDomain.SetupInformation.ApplicationBase))));
-        ReadDataFromFile();
+        //InitData();
     }
 
     public static void SaveData()
     {
-        var filePath = Path.Combine(_path, "Data", "accounts.json");
-        string json = JsonConvert.SerializeObject(Users);
-        File.WriteAllText(filePath, json);
+        if (isEncrypted)
+        {
+            var filePath = Path.Combine(_path, "Data", "accounts.json");
+            string json = Crypting.Encrypt(JsonConvert.SerializeObject(Users));
+            File.WriteAllText(filePath, json);
+        }
+        
     }
-    private static void ReadDataFromFile()
+    public static void ReadDataFromFile(string key)
     {
         var filePath= Path.Combine(_path, "Data", "accounts.json");
         if (!File.Exists(filePath))
@@ -33,7 +41,7 @@ public static class UsersAccountService
         using (StreamReader r = new StreamReader(filePath))
         {
             string json = r.ReadToEnd();
-            Users = JsonConvert.DeserializeObject<List<User>>(json);
+            Users = JsonConvert.DeserializeObject<List<User>>(Crypting.Decrypt(json,key));
         }
     }
 
@@ -51,7 +59,8 @@ public static class UsersAccountService
                 Role="admin"
             }
         };
-        string json = JsonConvert.SerializeObject(data);
+        string json = Crypting.Encrypt(JsonConvert.SerializeObject(data));
         File.WriteAllText(path, json);
     }
+
 }

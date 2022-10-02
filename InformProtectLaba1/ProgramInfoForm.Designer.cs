@@ -54,7 +54,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 125);
+            this.ClientSize = new System.Drawing.Size(427, 125);
             this.Controls.Add(this.TaskInfo);
             this.Controls.Add(this.AuthorInfo);
             this.Name = "ProgramInfoForm";

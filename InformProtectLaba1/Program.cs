@@ -14,7 +14,7 @@ namespace InformProtectLaba1
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.ApplicationExit += onAppExit;
-            Application.Run(new MainForm());
+            Application.Run(new DecryptForm());
         }
 
         private static void onAppExit(object? sender, EventArgs e)
